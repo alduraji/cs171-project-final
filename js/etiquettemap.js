@@ -329,7 +329,7 @@ class EtiquetteMap {
             
         // Legend scales + axes
 		vis.x = d3.scaleOrdinal()
-		.domain(['Lean toward NO', 'Lean toward YES'])
+		.domain(['Relatively NO', 'Relatively YES'])
         .range([0, 300])
 
 		vis.xAxis = d3.axisBottom()
