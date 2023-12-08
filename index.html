@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Are YOU a Normal Flier?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+
+</head>
+<body>
+
+    <div>
+        <!-- Title Page -->
+        <section class="title-page page">
+            <div class="d-flex align-items-center justify-content-center" style="padding-top: 25vh;">
+                <div class="title-container">
+                    <h1 class="standard-text">Are YOU a Normal Flier?</h1>
+                    <h5 class="subtext" style="font-weight: lighter;">A data story on US Flying Culture.</h5>
+                    <br/>
+                    <h6 class="standard-text" style="font-weight: lighter; font-size: 14px">Built by Jennifer Guo, Glen Liu, Mohamed Baker Al Duraji III for CS 171: Visualization, Fall 2023</h6>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blurb 1 -->
+        <section class="page desc">
+            <div class="row d-flex" style="height: 100vh;">
+                <div class="desc-text standard-text">
+                    <p>When it comes to flying, we all have our own habits and preferences. Today, we want to get a better
+                        sense of how people fly by answering two questions, one macroscopic and one microscopic:
+                        <p style="text-align: center"><em>
+                    How do people in the US fly?
+                    <br/>
+                    How do people behave on flights?
+                </em></p>
+                    Our goal is to understand what is usual and what is not usual (statistically speaking) when it comes to flying, and we
+                        invite you to join us on this journey across the skies.
+                    <br/>
+                    <br/>
+                    First, we examine the macroscopic data behind flight frequency, airport arrivals, and airport departures.
+                </div>
+            </div>
+        </section>
+
+        <!-- Flight Map -->
+        <section class="page p2">
+            <div style="height: 100vh;">
+                <h2 class="page-title standard-text">Where are people flying to?</h2>
+
+                <div class="justify-content-center" id="flight-map" style="height: 70%; width: 75%;"></div>
+            </div>
+        </section>
+
+        <!-- Radial Chart -->
+        <section class="page p3">
+            <div style="height: 100vh;">
+                <h2 class="page-title standard-text" id="radial-title"><i>Peaks & Troughs</i> in Monthly Air Travel Volume</h2>
+                <div id="tip" class="tooltip" style="position: absolute; opacity: 0; pointer-events: none; padding: 10px; border-radius: 5px; border: 0px solid #ccc; z-index: 100;"></div>
+
+                <div class="justify-content-center" id="radial-chart" style="height: 90%; width: 100%;"></div>
+                <div id="extra" class="standard-text desc-text"></div>
+                <div id="radial-blurb" class="standard-text desc-text"></div>
+            </div>
+
+        </section>
+
+        <!-- Chord Graph -->
+        <section class="page p4">
+            <div style="height: 100vh;">
+                <h2 class="page-title standard-text">How are people flying over time?</h2>
+                <div class="row" style="height: 100%;">
+                    <div class="col" style="margin-left: 5em;">
+                        <div id="agg-flight-data" style="height: 100%; width: 60%;"></div>
+                    </div>
+                    <div class="col">
+                        <div id="timeline" style="height: 100%; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delay Map -->
+        <section class="page p5">
+            <div style="height: 100vh;">
+                <h2 class="page-title standard-text">Which airports have the worst delays?</h2>
+                <!-- Toggle -->
+                <div class="d-flex my-switch justify-content-center">
+                    <div class="text-1 subtext">Departure Delay</div>
+
+                    <div class="form-check form-switch form-check-inline">
+                        <input id="arrival-toggle" class="form-check-input form-check-inline" type="checkbox" onchange="toggleChange()">
+                    </div>
+
+                    <div class="text-2 subtext">Arrival Delay</div>
+                </div>
+                <div id="delay-map" style="height: 80vh; width: 100%;"></div>
+            </div>
+        </section>
+
+        <!-- Blurb 2 -->
+        <section class="desc page">
+            <div class="row d-flex" style="height: 100vh;">
+                <div class="desc-text standard-text">
+                    <p>We now narrow our focus to examining the behavior of passengers on flights. Have you ever wondered
+                        how you should act on a flight, or what is considered common courtesy? If so, then these next
+                        couple of visualizations are for you.
+                        Before seeing how people across the country behave, we encourage you to think about how you act on flights
+                        by answering these questions for yourself:
+
+                    <p style="text-align: center"><em>
+                    Do you recline your seat?
+                        <br/>
+                    Would you wake up a sleeping passenger to use the restroom?
+                    <br/>
+                    Do you ever start a conversation with your seatmate?
+                    </em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blurb 3 -->
+        <section class="desc page">
+            <div class="row d-flex" style="height: 100vh;">
+                <div class="desc-text standard-text">
+                    <h2>Generally speaking, is it rude to say more than a few words to the stranger sitting next to you on a plane?</h2>
+                    <div class="row d-flex align-items-center justify-content-center" style="margin-top: 2em;">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light"><a class='yes' href="#p6">Yes</a></button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light"><a  class='no' href="#p6">No</a></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Etiquette Map -->
+        <section id="p6" class="page p6">
+            <div style="height: 100vh;">
+                <h2 class="page-title standard-text">What do Americans think proper flying etiquette is?</h2>
+                <div class="row d-flex justify-content-center" style="text-align: center;">
+                        <select id='questionSelector' class="form-control align-self-center subtext" style="width: 70%" onchange="categoryChange()"></select>
+                </div>
+
+                <div class="justify-content-center" id="regions-map" style="height: 100%; width: 100%;"></div>
+            </div>
+
+        </section>
+
+    <!-- Dot graph -->
+    </div>
+        <section class="page p7">
+            <div style="height: 100vh;">
+                <h2 class="page-title standard-text">Do people who fly more tend to recline their seat more?</h2>
+
+                <div class="justify-content-center" id="main-msg"  style="height: 55%; width: 55%; margin: auto"></div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Blurb 4 / Conclusion -->
+    <section class="desc page">
+        <div class="row d-flex" style="height: 100vh;">
+            <div class="desc-text standard-text">
+                <p>It's somewhat subtle, but as people travel more, they tend to find certain "ruder"
+                things to be more acceptable, such as reclining your seat or waking up the person next to you to go to the bathroom.
+                This makes sense, for if a passenger travels more, they would be more comfortable on an airplane, and thus more
+                comfortable making such decisions. For instance, while <b>17%</b> of fliers who fly "once a year or less" said that they
+                "always" recline their seat, <b>33%</b> of fliers who fly "every day" said that they "always" recline their seat.</p>
+                <p>We hope that our visualizations helped you get a better sense of what kind of flier you are. However, the most
+                important thing is to remember that every flier is unique, from the flights that they take to their flying
+                behavior on an airplane. And that is totally okay!</p>
+                <p>Thank you for joining us on this journey across the skies!</p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- - - - - - - - - - - - >
+<    Load JS libraries     >
+<- - - - - - - - - - - - -->
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!-- d3 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://unpkg.com/d3-delaunay@4"></script>
+<script src="https://unpkg.com/d3-geo-voronoi@1"></script>
+<!-- OWN JS -->
+<script src="js/template.js"></script>
+<script src="js/etiquettemap.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/aggregate-flight-data.js"></script>
+<script src="js/delaymap.js"></script>
+<script src="js/flightmap.js"></script>
+<script src="js/radialchart.js"></script>
+<script src="js/dotgraph.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

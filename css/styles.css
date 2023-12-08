@@ -1,0 +1,221 @@
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.title-container {
+  text-align: center;
+  padding-top: 3em;
+  width: 30%;
+}
+
+text {
+  font-family: 'Chivo Mono', monospace;
+  font-weight: lighter;
+}
+
+.subtext {
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+}
+
+.standard-text {
+  font-family: 'Chivo Mono', monospace;
+}
+
+.title-page {
+  background-image: url(../img/title-page.png);
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+  height: 100vh;
+  background-image: url(../img/body-bkg.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.axis-label {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.desc {
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-position: top;
+}
+
+.desc-text {
+    text-align: left;
+    font-size: 15px;
+    width: 40%;
+    margin-left: 20%;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.desc-text li {
+    font-weight: bold;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+}
+
+.desc {
+    font-family: sans-serif;
+}
+
+
+.page-title {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+#agg-flight-data h1 {
+    font: 22px sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    font: 12px sans-serif;
+    background-image: url(../img/tooltip.png);
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+    font-size: 0.8em;
+}
+.tooltip h3,h4 {
+    text-align: left;
+}
+.tooltip h4 {
+    font: 14px sans-serif;
+}
+
+.group-label {
+    font-size: 19px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#main-msg {
+    text-align: center;
+}
+
+.my-switch {
+    text-align: center;
+  }
+  
+  .my-switch .form-switch {
+    margin: 3px 0px 0 15px;
+  }
+
+#flight-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: grey;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .land {
+    fill: #dddddd;
+  }
+  
+  .border {
+    fill: none;
+    stroke-width: 1px;
+  }
+  
+  .interior {
+    stroke: white;
+  }
+  
+  .exterior {
+    stroke: #bbbbbb;
+  }
+  
+  .airport {
+    fill: white;
+    opacity: 0.6;
+    stroke: #252525;
+  }
+  
+  .flight {
+    fill: none;
+    stroke: #252525;
+    stroke-width: 1px;
+    stroke-opacity: 0.1;
+  }
+  
+  .voronoi {
+    fill: none;
+    stroke: none;
+    stroke-width: 1px;
+  }
+  
+  .highlight {
+    opacity: 1 !important;
+    stroke: #24caf2 !important;
+    stroke-width: 2px !important;
+    stroke-opacity: 0.8 !important;
+  }
+  
+  g#voronoi {
+    pointer-events: all;
+  }
+  
+  .form-check-input:checked {
+    border-color: #ff8560 !important;
+    background-color: #ff8560 !important;
+  }
+
+  .yes:link {
+    color: #24caf2;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .yes:visited {
+    color: #24caf2;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .yes:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  .no:link {
+    color: #ff8560;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .no:visited {
+    color: #ff8560;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .no:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
